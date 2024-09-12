@@ -1,13 +1,13 @@
-import { useFruits } from '../hooks/useFruits.ts'
+import { useInfo } from '../hooks/useInfo.ts'
 
 function App() {
-  const { data } = useFruits()
+  const { data } = useInfo()
 
   return (
     <>
       <div className="app">
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>{data && data.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul>
+        <h1>Fullstack Boilerplate - with Info!</h1>
+        <ul>{data && data.map((info) => <li key={info}>{info}</li>)}</ul>
       </div>
     </>
   )
