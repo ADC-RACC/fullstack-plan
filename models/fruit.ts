@@ -1,8 +1,9 @@
-export interface Fruit {
+export interface Info {
   id: number
-  name: string
+  title: string
+  info: string
 }
 
-export interface FruitData {
-  name: string
+export interface InfoData {
+  title: string
 }
