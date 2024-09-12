@@ -7,11 +7,11 @@ import {
 import { getInfo } from '../apis/info.ts'
 
 export function useInfo() {
-  const query = useQuery({ queryKey: ['info'], queryFn: getInfo })
-  return {
-    ...query,
-    // Extra queries go here e.g. addInfo: useAddInfo()
-  }
+  return useQuery({
+    queryKey: ['info'],
+    queryFn: () => getInfo(),
+  })
+  // Extra queries go here e.g. addInfo: useAddInfo()
 }
 
 export function useInfoMutation<TData = unknown, TVariables = unknown>(
