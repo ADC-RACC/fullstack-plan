@@ -8,10 +8,16 @@ router.get('/', async (req, res) => {
   try {
     const info = await db.getAllInfo()
 
-    res.json({ info: info.map((info) => info.title) })
+    res.json(info)
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ message: 'Something went wrong' })
+    if (error instanceof Error) {
+      console.error(error.message)
+    } else {
+      console.error('unknown error')
+    }
+    res.status(500).json({
+      error: `Something went wrong.`,
+    })
   }
 })
 

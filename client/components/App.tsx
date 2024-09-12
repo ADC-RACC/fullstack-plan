@@ -2,7 +2,7 @@ import { useInfo } from '../hooks/useInfo.ts'
 
 function App() {
   const { data } = useInfo()
-
+  console.log(data)
   return (
     <>
       <div className="app">
