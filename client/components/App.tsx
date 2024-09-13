@@ -1,16 +1,20 @@
-import { useFruits } from '../hooks/useFruits.ts'
+import { useInfo } from '../hooks/useInfo.ts'
+import { getInfo } from '../apis/info.ts'
+import Info from './Info.tsx'
 
 function App() {
-  const { data } = useFruits()
-
+  const { data } = useInfo()
+  console.log(data)
   return (
     <>
       <div className="app">
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>{data && data.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul>
+        <div className="header">
+          <h1>Fullstack Boilerplate - with Info!</h1>
+        </div>
+        <Info />
       </div>
     </>
   )
 }
-
+console.log(getInfo())
 export default App
