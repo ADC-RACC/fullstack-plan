@@ -5,6 +5,8 @@ import {
   MutationFunction,
 } from '@tanstack/react-query'
 import { getInfo } from '../apis/info.ts'
+import { Info } from '../../models/info.ts'
+import request from 'superagent'
 
 export function useInfo() {
   return useQuery({
@@ -32,3 +34,15 @@ export function useInfoMutation<TData = unknown, TVariables = unknown>(
 /* function useAddInfo() {
   return useInfosMutation(addInfo)
 } */
+export async function addInfo(newInfo: Info) {
+  console.log(newInfo)
+  const result = await request.post(`/api/v1/info`).send(newInfo)
+  console.log(result.statusCode)
+  return
+}
+
+export async function deleteSquids(id: number) {
+  const result = await request.delete(`/api/v1/info/`)
+  console.log(result.statusCode)
+  return
+}

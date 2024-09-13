@@ -1,6 +1,19 @@
 import connection from './connection.ts'
-import { Info } from '../../models/fruit.ts'
+import { Info } from '../../models/info.ts'
 
-export async function getAllInfo(db = connection): Promise<Info[]> {
+const db = connection
+
+export async function getAllInfo(): Promise<Info[]> {
   return db('info').select()
+}
+
+export async function addInfo(newInfo: Info) {
+  return db('info').insert({
+    title: newInfo.title,
+    info: newInfo.info,
+  })
+}
+
+export function deleteInfo(id: number) {
+  return db('info').where({ id }).del()
 }

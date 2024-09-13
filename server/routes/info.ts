@@ -20,5 +20,16 @@ router.get('/', async (req, res) => {
     })
   }
 })
+router.post('/', async (req, res) => {
+  try {
+    const newInfo = req.body
+    const addedInfo = await db.addInfo(newInfo)
+    res.json(addedInfo)
+  } catch (error) {
+    console.error(error)
+    res.status(500)
+  }
+})
+router.post('/:id', db.deleteInfo)
 
 export default router
