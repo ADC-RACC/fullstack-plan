@@ -8,10 +8,15 @@ function App() {
   return (
     <>
       <div className="app">
-        <div className="header">
+        <header>
           <h1>Fullstack Boilerplate - with Info!</h1>
-        </div>
-        <Info aria-label="Main Page Content" />
+        </header>
+        <main>
+          <Info aria-label="main content" />
+        </main>
+        <footer>
+          <p>hello</p>
+        </footer>
       </div>
     </>
   )
