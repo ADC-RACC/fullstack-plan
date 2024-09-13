@@ -41,8 +41,9 @@ export async function addInfo(newInfo: Info) {
   return
 }
 
-export async function deleteSquids(id: number) {
-  const result = await request.delete(`/api/v1/info/`)
+export async function deleteInfo(id: number) {
+  console.log(id)
+  const result = await request.delete(`/api/v1/info/${id}`)
   console.log(result.statusCode)
   return
 }

@@ -7,6 +7,10 @@ export async function getAllInfo(): Promise<Info[]> {
   return db('info').select()
 }
 
+export async function getInfoById(id: number): Promise<Info[]> {
+  return db('info').where({ id }).select()
+}
+
 export async function addInfo(newInfo: Info) {
   return db('info').insert({
     title: newInfo.title,

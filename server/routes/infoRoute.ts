@@ -30,6 +30,15 @@ router.post('/', async (req, res) => {
     res.status(500)
   }
 })
-router.post('/:id', db.deleteInfo)
+router.delete('/:id', async (req, res) => {
+  try {
+    const id = req.params.id
+    await db.deleteInfo(Number(id))
+  } catch (error) {
+    console.log(error)
+    res.sendStatus(500)
+  }
+  res.json()
+})
 
 export default router

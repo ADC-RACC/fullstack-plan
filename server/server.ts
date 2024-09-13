@@ -1,7 +1,7 @@
 import express from 'express'
 import * as Path from 'node:path'
 
-import infoRoutes from './routes/info.ts'
+import infoRoutes from './routes/infoRoute.ts'
 
 const server = express()
 

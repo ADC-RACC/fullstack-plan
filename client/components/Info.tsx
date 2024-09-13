@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { getInfo } from '../apis/info'
 import AddInfo from './useAddInfo'
+import DeleteInfo from './useDeleteInfo'
 
 function Info() {
   const { data, isPending, isError, error } = useQuery({
@@ -18,10 +19,10 @@ function Info() {
   return (
     <>
       <h1>Info</h1>
-
       {data.map((info) => (
         <li key={info.title}>
           {info.title}: {info.info}
+          <DeleteInfo id={info.id} />
         </li>
       ))}
       <AddInfo />
