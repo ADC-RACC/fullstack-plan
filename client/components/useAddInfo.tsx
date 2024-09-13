@@ -46,6 +46,7 @@ function AddInfo() {
             id="title"
             value={title}
             onChange={onChange}
+            aria-label="Add info to title catagory"
           />
         </div>
         <div>
@@ -56,9 +57,14 @@ function AddInfo() {
             id="info"
             value={info}
             onChange={onChange}
+            aria-label="Add info to info catagory"
           />
         </div>
-        <button type="submit" className="button-primary">
+        <button
+          type="submit"
+          aria-label="Submit data"
+          className="button-primary"
+        >
           Add
         </button>
       </form>

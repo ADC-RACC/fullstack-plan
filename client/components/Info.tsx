@@ -18,14 +18,18 @@ function Info() {
 
   return (
     <>
-      <h1>Info</h1>
-      {data.map((info) => (
-        <li key={info.title}>
-          {info.title}: {info.info}
-          <DeleteInfo id={info.id} />
-        </li>
-      ))}
-      <AddInfo />
+      <div className="Content">
+        <h1>Info</h1>
+        <div className="Info" aria-label="List of information">
+          {data.map((info) => (
+            <li key={info.title}>
+              {info.title}: {info.info}
+              <DeleteInfo id={info.id} />
+            </li>
+          ))}
+        </div>
+        <AddInfo />
+      </div>
     </>
   )
 }

@@ -4,3 +4,27 @@ html,
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+li {
+  font-weight: bold;
+}
+
+button {
+  background: gray;
+}
+
+.app {
+  background: gold;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+}
+
+.header {
+  background: orange;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+}

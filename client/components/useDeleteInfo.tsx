@@ -22,7 +22,7 @@ const DeleteInfo: React.FC<DeleteInfoProp> = ({ id }) => {
 
   return (
     <form className="form" onSubmit={onSubmit} aria-label="Delete Info">
-      <button type="submit" className="button-primary">
+      <button type="submit" aria-label="Delete Data" className="button-primary">
         Delete
       </button>
     </form>

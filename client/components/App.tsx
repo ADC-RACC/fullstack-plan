@@ -11,7 +11,7 @@ function App() {
         <div className="header">
           <h1>Fullstack Boilerplate - with Info!</h1>
         </div>
-        <Info />
+        <Info aria-label="Main Page Content" />
       </div>
     </>
   )
